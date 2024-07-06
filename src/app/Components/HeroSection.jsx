@@ -1,5 +1,10 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
+
+import { TypeAnimation } from 'react-type-animation';
+
+
 
 const HeroSection = () => {
     return (
@@ -8,10 +13,27 @@ const HeroSection = () => {
                 <div className='col-span-7 text-center place-self-center sm:text-left'>
                     <h1 className='mb-4 text-4xl font-extrabold text-white lg:text-6xl sm:text-5xl'>
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
-                        Hello, I&apos;m{" "}
-                            </span>
-                             Nipun</h1>
-                    <p className='mb-6 text-base text-lg text-white lg:text-xl'>I am an undergraduate student at the Sri Lanka Institute of Information Technology (SLIIT), specializing in software development. With a solid foundation in Java and JavaScript, I have successfully completed several projects that showcase my proficiency in these languages. My technical skills extend to frameworks and libraries such as Express, Node.js, and Next.js, where I have applied my knowledge to build robust and efficient web applications.</p>
+                            Hello, I&apos;m{" "}
+                        </span>
+                        <TypeAnimation
+                            sequence={[
+                                // Same substring at the start will only be typed out once, initially
+                                'Nipun',
+                                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                                'Fullstack Developer',
+                                1000,
+                                'Java Developer',
+                                1000,
+                                'Blogger',
+                                1000
+                            ]}
+                            wrapper="span"
+                            speed={50}
+                            style={{ fontSize: '2em', display: 'inline-block' }}
+                            repeat={Infinity}
+                        />
+                    </h1>
+                    <p className='mb-6 text-white lg:text-xl'>I am an undergraduate student at the Sri Lanka Institute of Information Technology (SLIIT), specializing in software development. With a solid foundation in Java and JavaScript, I have successfully completed several projects that showcase my proficiency in these languages. My technical skills extend to frameworks and libraries such as Express, Node.js, and Next.js, where I have applied my knowledge to build robust and efficient web applications.</p>
                 </div>
                 <div>
                     <button className='w-full px-6 py-4 mr-4 text-white bg-white rounded-full sm:w-fit hover:bg-slate-200 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500'>
