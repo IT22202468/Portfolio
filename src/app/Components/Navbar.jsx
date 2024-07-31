@@ -34,13 +34,11 @@ const Navbar = () => {
                     LOGO
                 </Link>
                 <div className="block mobile-menu md:hidden">
-                    {
-                        navbarOpen ? (
-                            <button onClick={() => setNavbarOpen(true)} className="flex items-center px-3 py-2 border text-slate-200 border-slate-200 hover:text-white hover:border-white"><Bars3icon className="w-5 h-5"/></button>
+                    {navbarOpen ? (
+                            <button onClick={() => setNavbarOpen(false)} className="flex items-center px-3 py-2 border text-slate-200 border-slate-200 hover:text-white hover:border-white"><Bars3icon className="w-5 h-5"/></button>
                         ) : (
                             <button onClick={() => setNavbarOpen(false)} className="flex items-center px-3 py-2 border text-slate-200 border-slate-200 hover:text-white hover:border-white"><XCircleIcon className="w-5 h-5"/></button>
-                        )
-                    }
+                    )}
                 </div>
                 <div className="hidden md:block menu md:w-auto" id="navbar">
                     <ul className="flex p-4 mt-0 md:flex-row md:p-0 md:space-x-8">

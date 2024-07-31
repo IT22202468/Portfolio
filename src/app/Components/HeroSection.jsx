@@ -32,13 +32,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
-            I am an undergraduate student at the Sri Lanka Institute of
-            Information Technology (SLIIT), specializing in software
-            development. With a solid foundation in Java and JavaScript, I have
-            successfully completed several projects that showcase my proficiency
-            in these languages. My technical skills extend to frameworks and
-            libraries such as Express, Node.js, and Next.js, where I have
-            applied my knowledge to build robust and efficient web applications.
+          Aspiring Software Engineer | Java & JavaScript Developer | AI & Machine Learning Enthusiast | Technical Writer on Medium
           </p>
           <div>
             <button className="w-full px-6 py-3 mr-4 text-white rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 sm:w-fit">
