@@ -15,6 +15,7 @@ const HeroSection = () => {
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
                             Hello, I&apos;m{" "}
                         </span>
+                        <br />
                         <TypeAnimation
                             sequence={[
                                 // Same substring at the start will only be typed out once, initially
@@ -29,7 +30,6 @@ const HeroSection = () => {
                             ]}
                             wrapper="span"
                             speed={50}
-                            style={{ fontSize: '2em', display: 'inline-block' }}
                             repeat={Infinity}
                         />
                     </h1>
