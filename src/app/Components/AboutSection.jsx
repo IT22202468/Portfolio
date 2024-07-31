@@ -8,7 +8,7 @@ const TAB_DATA = [
         title: "Skills",
         id: "skills",
         content: (
-            <ul>
+            <ul className="pl-2 list-disc">
                 <li><b>Backend Web Development</b></li>
                 <li>Frontend Web Development</li>
                 <li>C, C++, Python Programming</li>
@@ -20,7 +20,7 @@ const TAB_DATA = [
         title: "Certification",
         id: "certification",
         content: (
-            <ul>
+            <ul className="pl-2 list-disc">
                 <li>The Web Developer Bootcamp 2023</li>
                 <li>AI/ML Engineer - Stage 1 Industry Engagement Unit (SLIIT)</li>
             </ul>
@@ -30,7 +30,7 @@ const TAB_DATA = [
         title: "Volunteering",
         id: "volunteering",
         content: (
-            <ul>
+            <ul className="pl-2 list-disc">
                 <li>MS Club of SLIIT - Open-Source Software Development/ Writer</li>
             </ul>
         )
@@ -56,7 +56,7 @@ const AboutSection = () => {
                     height={500}
                     alt="about image"
                 />
-                <div>
+                <div className="flex flex-col h-full mt-4 text-left md:mt-0">
                     <h2 className="mb-4 text-4xl font-bold text-white">About Me</h2>
                     <p className="text-base md:text-justify lg:text-lg">
                         I am an undergraduate student at the Sri Lanka Institute of
