@@ -6,7 +6,7 @@ import TabButton from "./TabButton";
 const TAB_DATA = [
     {
         title: "Skills",
-        id: "skills",
+        id: "Skills",
         content: (
             <ul className="pl-2 list-disc">
                 <li><b>Backend Web Development</b></li>
@@ -18,7 +18,7 @@ const TAB_DATA = [
     },
     {
         title: "Certification",
-        id: "certification",
+        id: "Certification",
         content: (
             <ul className="pl-2 list-disc">
                 <li>The Web Developer Bootcamp 2023</li>
@@ -28,7 +28,7 @@ const TAB_DATA = [
     },
     {
         title: "Volunteering",
-        id: "volunteering",
+        id: "Volunteering",
         content: (
             <ul className="pl-2 list-disc">
                 <li>MS Club of SLIIT - Open-Source Software Development/ Writer</li>
