@@ -1,27 +1,37 @@
-// import { EmailTemplate } from '../../../components/EmailTemplate';
-import { Resend } from 'resend';
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const fromEmail = process.env.FROM_EMAIL;
 
-export async function POST() {
+export async function POST(req, res) {
+  const { email, subject, message } = await req.json();
+  console.log(email, subject, message);
+  
+  if (!fromEmail) {
+    return NextResponse.json({ error: "FROM_EMAIL environment variable not set" });
+  }
+
+  if (!process.env.RESEND_API_KEY) {
+    return NextResponse.json({ error: "RESEND_API_KEY environment variable not set" });
+  }
+
   try {
-    const { data, error } = await resend.emails.send({
-      from: 'Nipun <nipunprjay@gmail.com>',
-      to: ['nipunprjay@gmail.com'],
-      subject: 'Hello world',
+    const data = await resend.emails.send({
+      from: fromEmail,
+      to: [fromEmail, email],
+      subject: subject,
       react: (
         <>
-            <p>Email Body</p>
+          <h1>Test Email</h1>
+          <p>This is a test email to verify the email sending service.</p>
         </>
       ),
     });
-
-    if (error) {
-      return Response.json({ error }, { status: 500 });
-    }
-
+    console.log(email, subject, message);
     return Response.json(data);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error("Error sending email:", error);
+    return Response.json({ error: error.message });
   }
 }
