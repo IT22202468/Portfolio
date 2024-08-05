@@ -9,12 +9,10 @@ const TAB_DATA = [
         id: "skills",
         content: (
             <ul className="pl-2 list-disc">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>PostgreSQL</li>
-                <li>Sequelize</li>
-                <li>JavaScript</li>
-                <li>React</li>
+                <li><b>Backend Web Development</b></li>
+                <li>Frontend Web Development</li>
+                <li>C, C++, Python Programming</li>
+                <li>Mobile App Development</li>
             </ul>
         ),
     },
@@ -23,8 +21,8 @@ const TAB_DATA = [
         id: "certifications",
         content: (
             <ul className="pl-2 list-disc">
-                <li>AWS Cloud Practitioner</li>
-                <li>Google Professional Cloud Developer</li>
+                <li>The Web Developer Bootcamp 2023</li>
+                <li>AI/ML Engineer - Stage 1 Industry Engagement Unit (SLIIT)</li>
             </ul>
         ),
     },
@@ -33,8 +31,7 @@ const TAB_DATA = [
         id: "volunteering",
         content: (
             <ul className="pl-2 list-disc">
-                <li>Volunteer at Local Community Center</li>
-                <li>Mentor at Coding Bootcamp</li>
+                <li>MS Club of SLIIT - Open-Source Software Development/ Writer</li>
             </ul>
         ),
     },

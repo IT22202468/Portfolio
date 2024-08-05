@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import Spline from '@splinetool/react-spline/next';
 
 const HeroSection = () => {
   return (
@@ -32,7 +33,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg lg:text-xl mb-6">
-          Aspiring Software Engineer | Java & JavaScript Developer | AI & Machine Learning Enthusiast | Technical Writer on Medium
+            Aspiring Software Engineer | Java & JavaScript Developer | AI & Machine Learning Enthusiast | Technical Writer on Medium
           </p>
           <div>
             <button className="w-full px-6 py-3 mr-4 text-white rounded-full bg-gradient-to-br from-tertiary-500 via-primary-500 to-secondary-500 hover:bg-slate-200 sm:w-fit">
@@ -45,8 +46,8 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-        <div className="col-span-4 mt-4 place-self-center lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] relative">
+        <div className="lg:w-[500px] lg:h-[500px] col-span-4 mt-4 place-self-center lg:mt-0">
+          {/* <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] relative">
             <Image
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               src="/images/Hero-section.png"
@@ -54,7 +55,10 @@ const HeroSection = () => {
               width={500}
               height={500}
             />
-          </div>
+          </div> */}
+          <Spline
+            scene="https://prod.spline.design/hocZo1haU1fpFco8/scene.splinecode"
+          />
         </div>
       </div>
     </section>

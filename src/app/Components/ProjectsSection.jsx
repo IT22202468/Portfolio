@@ -11,7 +11,7 @@ const projectsData = [
     description: "Open-Source Project by MS Club of SLIIT (Ongoing project). Contributed to implement the Rules Section.",
     image: "/images/projects/minihackathon.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/ms-club-sliit/minihackathon-2024",
     previewUrl: "/",
   },
   {
@@ -20,8 +20,8 @@ const projectsData = [
     description: "Open-Source Project by MS Club of SLIIT (Ongoing project). Contributed to fix issues in frontend.",
     image: "/images/projects/csne2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ms-club-sliit/CSNE-SC-Official-Web",
+    previewUrl: "https://csne-sc.vercel.app/",
   },
   {
     id: 3,
