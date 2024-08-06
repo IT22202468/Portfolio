@@ -1,45 +1,36 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import 'dotenv/config';
+
+const serviceID = process.env.SERVICE_ID;
+const templateID = process.env.TEMPLATE_ID;
+const publickKey = process.env.PUBLIC_KEY;
+
+console.log(serviceID, templateID, publickKey);
 
 const EmailSection = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSONdata,
-    };
-
-    try {
-      const response = await fetch(endpoint, options);
-      const resData = await response.json();
-
-      if (response.status === 200) {
-        console.log("Message sent.");
-        setEmailSubmitted(true);
-      } else {
-        console.error("Failed to send message:", resData);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    emailjs
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: publickKey,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
@@ -61,22 +52,31 @@ const EmailSection = () => {
           open. Whether you have a question or just want to say hi, I&apos;ll
           try my best to get back to you!
         </p>
-        <div className="flex flex-row gap-2 socials">
-          <Link href="https://github.com">
+        <div className="flex flex-col socials">
+          <div className="flex flex-row gap-2 socials">
+          <Link href="https://github.com/NipunPJ27">
             <Image src={GithubIcon} alt="Github Icon" />
+          <h5 className="mt-5"><a href="https://github.com/NipunPJ27">NipunPJ27</a></h5>
           </Link>
-          <Link href="https://linkedin.com">
+          </div>
+          <div className="flex flex-row gap-2 socials">
+          <Link href="https://www.linkedin.com/in/nipunjayasinghe/">
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
+
+          <h5 className="mt-5"><a href="https://www.linkedin.com/in/nipunjayasinghe/">Nipun Jayasinghe</a></h5>
           </Link>
+          </div>
         </div>
       </div>
       <div>
-        {emailSubmitted ? (
+        {/* {sendEmail ? (
           <p className="mt-2 text-sm text-green-500">
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          
+        )} */}
+        <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -131,7 +131,6 @@ const EmailSection = () => {
               Send Message
             </button>
           </form>
-        )}
       </div>
     </section>
     </div>
