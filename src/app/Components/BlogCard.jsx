@@ -4,7 +4,7 @@ import Image from "next/image";
 const BlogCard = ({ title, tag, image, url }) => {
     return (
         <a href={url} target="_blank" rel="noopener noreferrer" className="block mb-4">
-            <div className="flex items-center p-4 rounded-md shadow-md hover:bg-primary-500">
+            <div className="flex items-center p-4 transition-all duration-300 border border-gray-300 rounded-md shadow-md hover:border-primary-500 hover:shadow-2xl">
                 <div className="flex-shrink-0 w-20 h-20 mr-4">
                     <Image width={500} height={500} src={image} alt={title} className="object-cover w-full h-full rounded-md" />
                 </div>
