@@ -29,8 +29,8 @@ const projectsData = [
     description: "Developed a web application using MERN stack for Genius Restaurant to manage their restaurant tasks easily.",
     image: "/images/projects/itp.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Novatech-Nexus/Genius-frontend",
+    previewUrl: "https://genius-frontend.vercel.app/",
   },
   {
     id: 4,
@@ -38,8 +38,8 @@ const projectsData = [
     description: "Developed a web application using Java as backend for Object Oriented Programming module Year 2 Semester 1.",
     image: "/images/projects/oop.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/NipunPJ27/Event-Management-system",
+    previewUrl: "https://github.com/NipunPJ27/Event-Management-system",
   },
   {
     id: 5,
@@ -47,8 +47,8 @@ const projectsData = [
     description: "Developed a simple android game using Kotlin created for Mobile Application Development module Year 2 Semester 2",
     image: "/images/projects/todo.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/NipunPJ27/Task_Manager_App",
+    previewUrl: "https://github.com/NipunPJ27/Task_Manager_App",
   },
   {
     id: 6,
@@ -56,8 +56,8 @@ const projectsData = [
     description: "Developed a simple android game using Kotlin for Mobile Application Development module Year 2 Semester 2",
     image: "/images/projects/tuktuk.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/NipunPJ27/Tuk-tuk",
+    previewUrl: "https://github.com/NipunPJ27/Tuk-tuk",
   },
 ];
 

@@ -15,6 +15,10 @@ const navLinks = [
     path: "#projects",
   },
   {
+    title: "Blog",
+    path: "#contact",
+  },
+  {
     title: "Contact",
     path: "#contact",
   },
@@ -30,7 +34,7 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl font-semibold text-white md:text-5xl"
         >
-          LOGO
+          NipunPJ
         </Link>
         <div className="block mobile-menu md:hidden">
           {!navbarOpen ? (
