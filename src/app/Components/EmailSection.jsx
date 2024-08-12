@@ -5,11 +5,10 @@ import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
-import 'dotenv/config';
 
-const serviceID = process.env.SERVICE_ID;
-const templateID = process.env.TEMPLATE_ID;
-const publickKey = process.env.PUBLIC_KEY;
+const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+const publickKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
 
 console.log(serviceID, templateID, publickKey);
 
@@ -39,44 +38,46 @@ const EmailSection = () => {
         Contact
       </h2>
       <section
-      id="contact"
-      className="relative grid gap-4 pb-12 my-12 md:grid-cols-2 md:my-12"
-    >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10">
-        <h5 className="my-2 text-xl font-bold text-white">
-          Let&apos;s Connect
-        </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
-        </p>
-        <div className="flex flex-col socials">
-          <div className="flex flex-row gap-2 socials">
-          <Link href="https://github.com/NipunPJ27">
-            <Image src={GithubIcon} alt="Github Icon" />
-          <h5 className="mt-5"><a href="https://github.com/NipunPJ27">NipunPJ27</a></h5>
-          </Link>
-          </div>
-          <div className="flex flex-row gap-2 socials">
-          <Link href="https://www.linkedin.com/in/nipunjayasinghe/">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+        id="contact"
+        className="relative grid gap-4 pb-12 my-12 md:grid-cols-2 md:my-12"
+      >
+        <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+        <div className="z-10">
+          <h5 className="my-2 text-xl font-bold text-white">
+            Let&apos;s Connect
+          </h5>
+          <p className="text-[#ADB7BE] mb-4 max-w-md">
+            I&apos;m currently looking for new opportunities, my inbox is always
+            open. Whether you have a question or just want to say hi, I&apos;ll
+            try my best to get back to you!
+          </p>
+          <div className="flex flex-col socials">
 
-          <h5 className="mt-5"><a href="https://www.linkedin.com/in/nipunjayasinghe/">Nipun Jayasinghe</a></h5>
-          </Link>
+            <div className="flex flex-row gap-2 socials">
+              <Link href="https://github.com/NipunPJ27" className="flex items-center gap-2">
+                <Image src={GithubIcon} alt="Github Icon" />
+                <span className="mt-5">NipunPJ27</span>
+              </Link>
+            </div>
+
+            <div className="flex flex-row gap-2 socials">
+              <Link href="https://www.linkedin.com/in/nipunjayasinghe/" className="flex items-center gap-2">
+                <Image src={LinkedinIcon} alt="Linkedin Icon" />
+                <span className="mt-5">Nipun Jayasinghe</span>
+              </Link>
+            </div>
+
           </div>
         </div>
-      </div>
-      <div>
-        {/* {sendEmail ? (
+        <div>
+          {/* {sendEmail ? (
           <p className="mt-2 text-sm text-green-500">
             Email sent successfully!
           </p>
         ) : (
           
         )} */}
-        <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
+          <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
             <div className="mb-6">
               <label
                 htmlFor="email"
@@ -131,8 +132,8 @@ const EmailSection = () => {
               Send Message
             </button>
           </form>
-      </div>
-    </section>
+        </div>
+      </section>
     </div>
   );
 };

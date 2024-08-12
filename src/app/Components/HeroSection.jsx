@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import Spline from '@splinetool/react-spline/next';
+// import Spline from '@splinetool/react-spline/next';
 
 const HeroSection = () => {
   return (
@@ -17,9 +17,8 @@ const HeroSection = () => {
             <br />
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 "Nipun",
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                1000,
                 "a Full stack developer",
                 1000,
                 "a Java developer",
@@ -56,9 +55,9 @@ const HeroSection = () => {
               height={500}
             />
           </div> */}
-          <Spline
+          {/* <Spline
             scene="https://prod.spline.design/hocZo1haU1fpFco8/scene.splinecode"
-          />
+          /> */}
         </div>
       </div>
     </section>
