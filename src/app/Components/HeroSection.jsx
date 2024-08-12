@@ -1,15 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React from "react";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-// import Spline from '@splinetool/react-spline/next';
+import Spline from '@splinetool/react-spline/next';
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-8 text-center sm:text-left place-self-center justify-self-start">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-8 text-center sm:text-left place-self-center justify-self-start">
           <h1 className="mb-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl lg:leading-normal">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello I'm{" "}
@@ -44,21 +48,16 @@ const HeroSection = () => {
               </span>
             </button>
           </div>
-        </div>
-        <div className="lg:w-[500px] lg:h-[500px] col-span-4 mt-4 place-self-center lg:mt-0">
-          {/* <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] relative">
-            <Image
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              src="/images/Hero-section.png"
-              alt="hero image"
-              width={500}
-              height={500}
-            />
-          </div> */}
-          {/* <Spline
-            scene="https://prod.spline.design/hocZo1haU1fpFco8/scene.splinecode"
-          /> */}
-        </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="lg:w-[500px] lg:h-[500px] col-span-4 mt-4 place-self-center lg:mt-0">
+          <Spline
+            scene="https://prod.spline.design/mph90IOJiIePxRK1/scene.splinecode"
+          />
+        </motion.div>
       </div>
     </section>
   );
