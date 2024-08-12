@@ -4,6 +4,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Spline from '@splinetool/react-spline/next';
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -39,9 +40,11 @@ const HeroSection = () => {
             Aspiring Software Engineer | Java & JavaScript Developer | AI & Machine Learning Enthusiast | Technical Writer on Medium
           </p>
           <div>
+            <Link href="#contact">
             <button className="w-full px-6 py-3 mr-4 text-white rounded-full bg-gradient-to-br from-tertiary-500 via-primary-500 to-secondary-500 hover:bg-slate-200 sm:w-fit">
               Contact me
             </button>
+            </Link>
             <button className="w-full px-1 py-1 mt-3 text-white rounded-full bg-gradient-to-br from-tertiary-500 via-primary-500 to-secondary-500 hover:bg-slate-800 sm:w-fit">
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 ">
                 Download CV
