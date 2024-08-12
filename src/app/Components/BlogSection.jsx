@@ -1,10 +1,19 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import MediumIcon from "../../../public/icons8-medium-240.svg";
 import BlogCard from "./BlogCard";
+import { motion, useInView } from "framer-motion";
 
 const BlogSection = () => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { Once: true });
+
+    const cardVariants = {
+        initial: { y: 50, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+    };
 
     const blogData = [
         {
@@ -54,9 +63,17 @@ const BlogSection = () => {
                     <p className="text-base text-left md:text-justify lg:text-lg">
                         Here are some of my articles which I have written on <a href="https://medium.com/@npjsinghe"><u>Medium</u></a>. I publish content related to IT and technology.
                     </p>
-                    <ul className="pl-5 mt-5 list-disc">
-                        {blogData.map((blog) => (
-                            <BlogCard key={blog.id} title={blog.title} tag={blog.tag} image={blog.image} url={blog.url} />
+                    <ul ref={ref} className="pl-5 mt-5">
+                        {blogData.map((blog, index) => (
+                            <motion.li
+                                key={blog.id}
+                                variants={cardVariants}
+                                initial="initial"
+                                animate={isInView ? "animate" : "initial"}
+                                transition={{ duration: 0.3, delay: index * 0.4 }}
+                            >
+                                <BlogCard title={blog.title} tag={blog.tag} image={blog.image} url={blog.url} />
+                            </motion.li>
                         ))}
                     </ul>
                 </div>
