@@ -54,11 +54,10 @@ const BlogSection = () => {
     ];
 
     return (
-        <section id="blog">
+        <section id="blog" className="px-4 py-8 sm:py-16 xl:px-16">
             <h2 className="mt-4 mb-8 text-4xl font-bold text-center text-white md:mb-12">
                 Blog
             </h2>
-            {/* Image is displayed below the heading in mobile view */}
             <Image 
                 src="/images/blogImg.png" 
                 width={500} 
