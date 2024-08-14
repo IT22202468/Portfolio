@@ -9,6 +9,7 @@ import Image from "next/image";
 const EmailSection = () => {
   const form = useRef();
   const [errors, setErrors] = useState({});
+  const [emailSent, setEmailSent] = useState(false); // State to manage the visibility of the success message
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -22,14 +23,13 @@ const EmailSection = () => {
       process.env.NEXT_PUBLIC_PUBLIC_KEY
     )
       .then((result) => {
-        alert('Message sent successfully!');
+        setEmailSent(true); // Show the success message
         form.current.reset();
         setErrors({});
       }, (error) => {
         alert('Failed to send message, please try again.');
       });
   };
-
 
   const validateForm = () => {
     const email = form.current.user_email.value;
@@ -49,7 +49,6 @@ const EmailSection = () => {
 
     return Object.keys(newErrors).length === 0;
   };
-
 
   return (
     <div>
@@ -134,6 +133,9 @@ const EmailSection = () => {
               Send Message
             </button>
           </form>
+          {emailSent && (
+            <p className="mt-4 text-green-500">Message sent successfully!</p> // Display the success message
+          )}
         </div>
       </section>
     </div>
