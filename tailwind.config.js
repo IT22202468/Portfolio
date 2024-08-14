@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-import colors, { purple, pink, blue } from "tailwindcss/colors";
+import colors, { sky, blue, cyan } from "tailwindcss/colors";
 
 
 export const content = [
@@ -17,9 +17,9 @@ export const theme = {
   },
   colors: {
     ...colors,
-    primary: purple,
-    secondary: pink,
-    tertiary: blue,
+    primary: sky,
+    secondary: blue,
+    tertiary: cyan,
   }
 };
 export const plugins = [];
