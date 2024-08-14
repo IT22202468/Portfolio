@@ -2,11 +2,11 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import MediumIcon from "../../../public/icons8-medium-240.svg";
+import blogImg from "../../../public/images/blogImg.png";
 import BlogCard from "./BlogCard";
 import { motion, useInView } from "framer-motion";
 
 const BlogSection = () => {
-
     const ref = useRef(null);
     const isInView = useInView(ref, { Once: true });
 
@@ -18,21 +18,24 @@ const BlogSection = () => {
     const blogData = [
         {
             id: 1,
-            title: "Cracking the OOP Interview: Key Interview Questions and Answers - part I",
+            title:
+                "Cracking the OOP Interview: Key Interview Questions and Answers - part I",
             tag: ["OOP", "Object-Oriented Programming", "Java"],
             image: "/images/articles/oopi.png",
             url: "https://medium.com/@npjsinghe/cracking-the-oop-interview-key-interview-questions-and-answers-9276fcd1a1bd",
         },
         {
             id: 2,
-            title: "Cracking the OOP Interview: Key Interview Questions and Answers - part II",
+            title:
+                "Cracking the OOP Interview: Key Interview Questions and Answers - part II",
             tag: ["OOP", "Object-Oriented Programming", "Java"],
             image: "/images/articles/oopii.png",
             url: "https://medium.com/@npjsinghe/cracking-the-oop-interview-key-interview-questions-and-answers-3cf7d4ff70e6",
         },
         {
             id: 3,
-            title: "A Brief Guide to Object-Oriented Concepts: Simplified for Easy Learning",
+            title:
+                "A Brief Guide to Object-Oriented Concepts: Simplified for Easy Learning",
             tag: ["OOP", "Object-Oriented Programming", "Java"],
             image: "/images/articles/ooc.png",
             url: "https://medium.com/ms-club-of-sliit/a-brief-guide-to-object-oriented-concepts-simplified-for-easy-learning-fb84513b6b75",
@@ -58,32 +61,57 @@ const BlogSection = () => {
             <h2 className="mt-4 mb-8 text-4xl font-bold text-center text-white md:mb-12">
                 Blog
             </h2>
+            {/* Image is displayed below the heading in mobile view */}
+            <Image 
+                src="/images/blogImg.png" 
+                width={500} 
+                height={500} 
+                alt="Blog Image" 
+                className="block mx-auto mb-8 md:hidden" 
+            />
             <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center md:space-x-10">
                 <div>
-                    <p className="text-base text-left md:text-justify lg:text-lg">
-                        Here are some of my articles which I have written on <a href="https://medium.com/@npjsinghe"><u>Medium</u></a>. I publish content related to IT and technology.
-                    </p>
-                    <ul ref={ref} className="pl-5 mt-5">
-                        {blogData.map((blog, index) => (
-                            <motion.li
-                                key={blog.id}
-                                variants={cardVariants}
-                                initial="initial"
-                                animate={isInView ? "animate" : "initial"}
-                                transition={{ duration: 0.3, delay: index * 0.4 }}
-                            >
-                                <BlogCard title={blog.title} tag={blog.tag} image={blog.image} url={blog.url} />
-                            </motion.li>
-                        ))}
-                    </ul>
+                    <div className="flex flex-wrap items-center gap-8 px-4 py-8 md:grid md:grid-cols-2 xl:gap-16 sm:py-16 xl:px-16 sm:flex-wrap-reverse">
+                        <div className="flex flex-col h-full text-left md:mt-0">
+                            <div className="flex flex-col">
+                            <p className="text-base lg:text-lg">
+                            Explore my collection of articles on <a href="https://medium.com/@npjsinghe"><u>Medium</u></a>, where I share insights
+                            and expertise on various technology and programming topics. From
+                            detailed tutorials to thought-provoking discussions, my blog aims to
+                            provide valuable knowledge and practical tips for developers and
+                            tech enthusiasts alike. Follow my journey as I delve into the latest
+                            trends and innovations in the tech world.
+                            </p>
+                            <ul ref={ref} className="pl-5 mt-5">
+                                {blogData.map((blog, index) => (
+                                    <motion.li
+                                        key={blog.id}
+                                        variants={cardVariants}
+                                        initial="initial"
+                                        animate={isInView ? "animate" : "initial"}
+                                        transition={{ duration: 0.3, delay: index * 0.4 }}
+                                    >
+                                        <BlogCard
+                                            title={blog.title}
+                                            tag={blog.tag}
+                                            image={blog.image}
+                                            url={blog.url}
+                                        />
+                                    </motion.li>
+                                ))}
+                            </ul>
+                            </div>
+                        </div>
+                        {/* Image is hidden in mobile view and displayed only on larger screens */}
+                        <Image 
+                            src="/images/blogImg.png" 
+                            width={500} 
+                            height={500} 
+                            alt="Blog Image" 
+                            className="hidden md:block" 
+                        />
+                    </div>
                 </div>
-                <Image
-                    src={MediumIcon}
-                    width={300}
-                    height={300}
-                    alt="Medium Icon"
-                    className="hidden mb-4 md:block md:mb-0"
-                />
             </div>
         </section>
     );
