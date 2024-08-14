@@ -1,14 +1,12 @@
 "use client";
 import React, { useRef } from "react";
 import Image from "next/image";
-import MediumIcon from "../../../public/icons8-medium-240.svg";
-import blogImg from "../../../public/images/blogImg.png";
 import BlogCard from "./BlogCard";
 import { motion, useInView } from "framer-motion";
 
 const BlogSection = () => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { Once: true });
+    const isInView = useInView(ref, { once: true });
 
     const cardVariants = {
         initial: { y: 50, opacity: 0 },
@@ -18,8 +16,7 @@ const BlogSection = () => {
     const blogData = [
         {
             id: 1,
-            title:
-                "Cracking the OOP Interview: Key Interview Questions and Answers - part I",
+            title: "Cracking the OOP Interview: Key Interview Questions and Answers - part I",
             tag: ["OOP", "Object-Oriented Programming", "Java"],
             image: "/images/articles/oopi.png",
             url: "https://medium.com/@npjsinghe/cracking-the-oop-interview-key-interview-questions-and-answers-9276fcd1a1bd",
@@ -57,11 +54,10 @@ const BlogSection = () => {
     ];
 
     return (
-        <section id="blog">
+        <section id="blog" className="px-4 py-8 sm:py-16 xl:px-16">
             <h2 className="mt-4 mb-8 text-4xl font-bold text-center text-white md:mb-12">
                 Blog
             </h2>
-            {/* Image is displayed below the heading in mobile view */}
             <Image 
                 src="/images/blogImg.png" 
                 width={500} 
@@ -69,48 +65,44 @@ const BlogSection = () => {
                 alt="Blog Image" 
                 className="block mx-auto mb-8 md:hidden" 
             />
-            <div className="flex flex-col items-center md:flex-row md:items-center md:justify-center md:space-x-10">
-                <div>
-                    <div className="flex flex-wrap items-center gap-8 px-4 py-8 md:grid md:grid-cols-2 xl:gap-16 sm:py-16 xl:px-16 sm:flex-wrap-reverse">
-                        <div className="flex flex-col h-full text-left md:mt-0">
-                            <div className="flex flex-col">
-                            <p className="text-base lg:text-lg">
-                            Explore my collection of articles on <a href="https://medium.com/@npjsinghe"><u>Medium</u></a>, where I share insights
-                            and expertise on various technology and programming topics. From
-                            detailed tutorials to thought-provoking discussions, my blog aims to
-                            provide valuable knowledge and practical tips for developers and
-                            tech enthusiasts alike. Follow my journey as I delve into the latest
-                            trends and innovations in the tech world.
-                            </p>
-                            <ul ref={ref} className="pl-5 mt-5">
-                                {blogData.map((blog, index) => (
-                                    <motion.li
-                                        key={blog.id}
-                                        variants={cardVariants}
-                                        initial="initial"
-                                        animate={isInView ? "animate" : "initial"}
-                                        transition={{ duration: 0.3, delay: index * 0.4 }}
-                                    >
-                                        <BlogCard
-                                            title={blog.title}
-                                            tag={blog.tag}
-                                            image={blog.image}
-                                            url={blog.url}
-                                        />
-                                    </motion.li>
-                                ))}
-                            </ul>
-                            </div>
-                        </div>
-                        {/* Image is hidden in mobile view and displayed only on larger screens */}
-                        <Image 
-                            src="/images/blogImg.png" 
-                            width={500} 
-                            height={500} 
-                            alt="Blog Image" 
-                            className="hidden md:block" 
-                        />
-                    </div>
+            <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-center md:space-x-10">
+                <div className="flex-1 md:flex-shrink-0">
+                    <p className="text-base lg:text-lg">
+                        Explore my collection of articles on <a href="https://medium.com/@npjsinghe"><u>Medium</u></a>, where I share insights
+                        and expertise on various technology and programming topics. From
+                        detailed tutorials to thought-provoking discussions, my blog aims to
+                        provide valuable knowledge and practical tips for developers and
+                        tech enthusiasts alike. Follow my journey as I delve into the latest
+                        trends and innovations in the tech world.
+                    </p>
+                    <ul ref={ref} className="pl-5 mt-5">
+                        {blogData.map((blog, index) => (
+                            <motion.li
+                                key={blog.id}
+                                variants={cardVariants}
+                                initial="initial"
+                                animate={isInView ? "animate" : "initial"}
+                                transition={{ duration: 0.3, delay: index * 0.4 }}
+                            >
+                                <BlogCard
+                                    title={blog.title}
+                                    tag={blog.tag}
+                                    image={blog.image}
+                                    url={blog.url}
+                                />
+                            </motion.li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="flex-1 md:flex-shrink-0">
+                    <Image 
+                        src="/images/blogImg.png" 
+                        width={500} 
+                        height={500} 
+                        alt="Blog Image" 
+                        className="hidden h-auto md:block"
+                        style={{ maxHeight: '100%' }}
+                    />
                 </div>
             </div>
         </section>
