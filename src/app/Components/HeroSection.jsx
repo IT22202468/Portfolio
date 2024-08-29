@@ -57,7 +57,7 @@ const HeroSection = () => {
               </span>
             </button>
             <br />
-            <div className="flex flex-row mt-10 social-links">
+            <div className="flex flex-row justify-center w-full mt-10 sm:justify-start">
               <Link
                 href="https://github.com/NipunPJ27"
                 className="flex items-center gap-2"
