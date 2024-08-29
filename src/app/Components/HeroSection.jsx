@@ -56,7 +56,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="lg:w-[500px] lg:h-[500px] col-span-4 mt-4 place-self-center lg:mt-0">
+          className="hidden lg:w-[500px] lg:h-[500px] col-span-4 mt-4 place-self-center lg:mt-0">
           <Spline
             scene="https://prod.spline.design/mph90IOJiIePxRK1/scene.splinecode"
           />
