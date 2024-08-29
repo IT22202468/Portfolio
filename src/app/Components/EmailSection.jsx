@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import WhatsappIcon from "../../../public/whatsapp-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -78,6 +79,12 @@ const EmailSection = () => {
             <div className="flex flex-row gap-2 socials">
               <Link href="https://www.linkedin.com/in/nipunjayasinghe/" className="flex items-center gap-2">
                 <Image src={LinkedinIcon} alt="Linkedin Icon" />
+                <span className="mt-5">Nipun Jayasinghe</span>
+              </Link>
+            </div>
+            <div className="flex flex-row gap-2 socials">
+              <Link href="https://wa.me/94704435850?text=Hello%20Nipun!" className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+                <Image src={WhatsappIcon} alt="Whatsapp Icon" />
                 <span className="mt-5">Nipun Jayasinghe</span>
               </Link>
             </div>
