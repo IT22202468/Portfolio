@@ -1,9 +1,11 @@
 "use client";
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import WhatsappIcon from "../../../public/whatsapp-icon.svg";
+import InstagramIcon from "../../../public/instagram-icon.svg";
+import FacebookIcon from "../../../public/facebook-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,19 +19,23 @@ const EmailSection = () => {
 
     if (!validateForm()) return;
 
-    emailjs.sendForm(
-      process.env.NEXT_PUBLIC_SERVICE_ID,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      form.current,
-      process.env.NEXT_PUBLIC_PUBLIC_KEY
-    )
-      .then((result) => {
-        setEmailSent(true); // Show the success message
-        form.current.reset();
-        setErrors({});
-      }, (error) => {
-        alert('Failed to send message, please try again.');
-      });
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          setEmailSent(true); // Show the success message
+          form.current.reset();
+          setErrors({});
+        },
+        (error) => {
+          alert("Failed to send message, please try again.");
+        }
+      );
   };
 
   const validateForm = () => {
@@ -39,12 +45,12 @@ const EmailSection = () => {
 
     const newErrors = {};
 
-    if (!email) newErrors.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
+    if (!email) newErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Email is invalid";
 
-    if (!subject) newErrors.subject = 'Subject is required';
+    if (!subject) newErrors.subject = "Subject is required";
 
-    if (!message) newErrors.message = 'Message is required';
+    if (!message) newErrors.message = "Message is required";
 
     setErrors(newErrors);
 
@@ -71,21 +77,50 @@ const EmailSection = () => {
           </p>
           <div className="flex flex-col socials">
             <div className="flex flex-row gap-2 socials">
-              <Link href="https://github.com/NipunPJ27" className="flex items-center gap-2">
+              <Link
+                href="https://github.com/IT22202468"
+                className="flex items-center gap-2"
+              >
                 <Image src={GithubIcon} alt="Github Icon" />
-                <span className="mt-5">NipunPJ27</span>
+                <span className="mt-5">IT22202468</span>
               </Link>
             </div>
             <div className="flex flex-row gap-2 socials">
-              <Link href="https://www.linkedin.com/in/nipunjayasinghe/" className="flex items-center gap-2">
+              <Link
+                href="https://www.linkedin.com/in/nipunjayasinghe/"
+                className="flex items-center gap-2"
+              >
                 <Image src={LinkedinIcon} alt="Linkedin Icon" />
                 <span className="mt-5">Nipun Jayasinghe</span>
               </Link>
             </div>
             <div className="flex flex-row gap-2 socials">
-              <Link href="https://wa.me/94704435850?text=Hello%20Nipun!" className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://wa.me/94704435850?text=Hello%20Nipun!"
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image src={WhatsappIcon} alt="Whatsapp Icon" />
                 <span className="mt-5">Nipun Jayasinghe</span>
+              </Link>
+            </div>
+            <div className="flex flex-row gap-2 socials">
+              <Link
+                href="https://www.instagram.com/nipun_pj/"
+                className="flex items-center gap-2"
+              >
+                <Image src={InstagramIcon} alt="Instagram Icon" />
+                <span className="mt-5">@nipun_pj</span>
+              </Link>
+            </div>
+            <div className="flex flex-row gap-2 socials">
+              <Link
+                href="https://www.facebook.com/nipun.jayasinghe.142/"
+                className="flex items-center gap-2"
+              >
+                <Image src={FacebookIcon} alt="Facebook Icon" />
+                <span className="mt-5">Nipun Pramodya Jayasinghe</span>
               </Link>
             </div>
           </div>
@@ -93,7 +128,10 @@ const EmailSection = () => {
         <div>
           <form className="flex flex-col" ref={form} onSubmit={sendEmail}>
             <div className="mb-6">
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-white">
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-white"
+              >
                 Your email
               </label>
               <input
@@ -101,13 +139,20 @@ const EmailSection = () => {
                 type="email"
                 id="email"
                 required
-                className={`bg-[#18191E] border ${errors.email ? 'border-red-500' : 'border-[#33353F]'} placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5`}
+                className={`bg-[#18191E] border ${
+                  errors.email ? "border-red-500" : "border-[#33353F]"
+                } placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5`}
                 placeholder="jacob@google.com"
               />
-              {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-sm text-red-500">{errors.email}</p>
+              )}
             </div>
             <div className="mb-6">
-              <label htmlFor="subject" className="block mb-2 text-sm font-medium text-white">
+              <label
+                htmlFor="subject"
+                className="block mb-2 text-sm font-medium text-white"
+              >
                 Subject
               </label>
               <input
@@ -115,23 +160,34 @@ const EmailSection = () => {
                 type="text"
                 id="subject"
                 required
-                className={`bg-[#18191E] border ${errors.subject ? 'border-red-500' : 'border-[#33353F]'} placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5`}
+                className={`bg-[#18191E] border ${
+                  errors.subject ? "border-red-500" : "border-[#33353F]"
+                } placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5`}
                 placeholder="Just saying hi"
               />
-              {errors.subject && <p className="text-sm text-red-500">{errors.subject}</p>}
+              {errors.subject && (
+                <p className="text-sm text-red-500">{errors.subject}</p>
+              )}
             </div>
             <div className="mb-6">
-              <label htmlFor="message" className="block mb-2 text-sm font-medium text-white">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium text-white"
+              >
                 Message
               </label>
               <textarea
                 name="message"
                 id="message"
                 required
-                className={`bg-[#18191E] border ${errors.message ? 'border-red-500' : 'border-[#33353F]'} placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5`}
+                className={`bg-[#18191E] border ${
+                  errors.message ? "border-red-500" : "border-[#33353F]"
+                } placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5`}
                 placeholder="Let's talk about..."
               />
-              {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
+              {errors.message && (
+                <p className="text-sm text-red-500">{errors.message}</p>
+              )}
             </div>
             <button
               type="submit"

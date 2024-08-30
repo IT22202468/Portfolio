@@ -8,6 +8,8 @@ import Link from "next/link";
 import GithubIcon from "../../../public/github-icon.svg";
 import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import WhatsappIcon from "../../../public/whatsapp-icon.svg";
+import InstagramIcon from "../../../public/instagram-icon.svg";
+import FacebookIcon from "../../../public/facebook-icon.svg";
 import Image from "next/image";
 
 const HeroSection = () => {
@@ -27,11 +29,13 @@ const HeroSection = () => {
             <br />
             <TypeAnimation
               sequence={[
-                "Nipun",
+                "Nipun Jayasinghe",
                 1000,
-                "a Full stack developer",
+                "a full-stack developer",
                 1000,
                 "a Java developer",
+                1000,
+                "UI/UX designer",
                 1000,
                 "a writer at Medium",
                 1000,
@@ -59,7 +63,7 @@ const HeroSection = () => {
             <br />
             <div className="flex flex-row justify-center w-full mt-10 sm:justify-start">
               <Link
-                href="https://github.com/NipunPJ27"
+                href="https://github.com/IT22202468"
                 className="flex items-center gap-2"
               >
                 <Image src={GithubIcon} alt="Github Icon" />
@@ -77,6 +81,18 @@ const HeroSection = () => {
                 rel="noopener noreferrer"
               >
                 <Image src={WhatsappIcon} alt="Whatsapp Icon" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/nipun_pj/"
+                className="flex items-center gap-2"
+              >
+                <Image src={InstagramIcon} alt="Instagram Icon" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/nipun.jayasinghe.142/"
+                className="flex items-center gap-2"
+              >
+                <Image src={FacebookIcon} alt="Facebook Icon" />
               </Link>
             </div>
           </div>

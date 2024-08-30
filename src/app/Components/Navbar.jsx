@@ -34,7 +34,10 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl font-semibold text-white md:text-5xl"
         >
-          NipunPJ
+          <h1>
+            Nipun
+            <span className="text-primary-400">PJ</span>
+          </h1>
         </Link>
         <div className="block mobile-menu md:hidden">
           {!navbarOpen ? (

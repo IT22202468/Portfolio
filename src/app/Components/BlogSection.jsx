@@ -65,7 +65,7 @@ const BlogSection = () => {
                 alt="Blog Image" 
                 className="block mx-auto mb-8 md:hidden" 
             />
-            <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-center md:space-x-10">
+            <div className="flex flex-col items-center gap-20 md:flex-row md:items-start md:justify-center md:space-x-10">
                 <div className="flex-1 md:flex-shrink-0">
                     <p className="text-base lg:text-lg">
                         Explore my collection of articles on <a href="https://medium.com/@npjsinghe"><u>Medium</u></a>, where I share insights

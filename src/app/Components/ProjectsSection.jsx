@@ -12,7 +12,7 @@ const projectsData = [
     image: "/images/projects/minihackathon.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/ms-club-sliit/minihackathon-2024",
-    previewUrl: "/",
+    previewUrl: "https://minihackathon.msclubsliit.org/",
   },
   {
     id: 2,
