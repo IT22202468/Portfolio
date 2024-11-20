@@ -25,6 +25,15 @@ const projectsData = [
   },
   {
     id: 3,
+    title: "FieldExpert",
+    description: "A web application created for Pest Detection, Crop Disease Detection, and Crop Recommendation.",
+    image: "/images/projects/fieldexpert.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Y3-S1-project-group/FieldExpert-Frontend",
+    previewUrl: "https://fieldexpertfrontend.vercel.app/",
+  },
+  {
+    id: 4,
     title: "Web Application for Genius Restaurant (Restaurant Management System) – 2024",
     description: "Developed a web application using MERN stack for Genius Restaurant to manage their restaurant tasks easily.",
     image: "/images/projects/itp.png",
@@ -33,7 +42,7 @@ const projectsData = [
     previewUrl: "https://genius-frontend.vercel.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "Event Management System",
     description: "Developed a web application using Java as backend for Object Oriented Programming module Year 2 Semester 1.",
     image: "/images/projects/oop.png",
@@ -42,7 +51,7 @@ const projectsData = [
     previewUrl: "https://github.com/NipunPJ27/Event-Management-system",
   },
   {
-    id: 5,
+    id: 6,
     title: "'Kōdō' task manager mobile app",
     description: "Developed a simple android game using Kotlin created for Mobile Application Development module Year 2 Semester 2",
     image: "/images/projects/todo.png",
@@ -51,7 +60,7 @@ const projectsData = [
     previewUrl: "https://github.com/NipunPJ27/Task_Manager_App",
   },
   {
-    id: 6,
+    id: 7,
     title: "Tuk Tuk",
     description: "Developed a simple android game using Kotlin for Mobile Application Development module Year 2 Semester 2",
     image: "/images/projects/tuktuk.png",
