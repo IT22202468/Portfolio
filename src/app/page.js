@@ -9,15 +9,15 @@ import ProjectsSection from "./Components/ProjectsSection";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212]">
-      <Navbar/>
+      <Navbar />
       <div className="container px-12 py-4 mx-auto mt-24">
-      <HeroSection/>
-      <AboutSection/>
-      <ProjectsSection/>
-      <BlogSection/>
-      <EmailSection/>
+        <HeroSection />
+        <AboutSection />
+        <ProjectsSection />
+        <BlogSection />
+        <EmailSection />
       </div>
-      <Footer/>
+      <Footer />
     </main>
   );
 }

@@ -36,7 +36,8 @@ const Navbar = () => {
         >
           <h1>
             Nipun
-            <span className="text-primary-400">PJ</span>
+            <span className="text-primary-300">Pramodya</span>
+            <span className="text-primary-400">Jayasinghe</span>
           </h1>
         </Link>
         <div className="block mobile-menu md:hidden">

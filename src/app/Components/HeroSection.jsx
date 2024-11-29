@@ -55,11 +55,14 @@ const HeroSection = () => {
                 Contact me
               </button>
             </Link>
-            <button className="w-full px-1 py-1 mt-3 text-white rounded-full bg-gradient-to-br from-tertiary-500 via-primary-500 to-secondary-500 hover:bg-slate-800 sm:w-fit">
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 ">
-                Download CV
-              </span>
-            </button>
+            <a href='/document/cv.pdf'
+            download='cv.pdf'>
+              <button className="w-full px-1 py-1 mt-3 text-white rounded-full bg-gradient-to-br from-tertiary-500 via-primary-500 to-secondary-500 hover:bg-slate-800 sm:w-fit">
+                <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2 ">
+                  Download CV
+                </span>
+              </button>
+            </a>
             <br />
             <div className="flex flex-row justify-center w-full mt-10 sm:justify-start">
               <Link
@@ -103,7 +106,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="hidden lg:block lg:w-[500px] lg:h-[500px] col-span-4 mt-4 place-self-center lg:mt-00"
         >
-          <Spline scene="https://prod.spline.design/mph90IOJiIePxRK1/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/mph90IOJiIePxRK1/scene.splinecode" />
         </motion.div>
       </div>
     </section>
